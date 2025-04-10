@@ -14,7 +14,6 @@ print(df["y"].value_counts())
 
 
 # 2. 数据清洗
-# NOTE: 不需要做数据处理
 def parse_record(row):
     result = []
     r = zip(names, row)
@@ -40,13 +39,11 @@ print(df["y"].value_counts())
 flag = False
 
 # # 3. 根据需求获取最原始的特征属性矩阵X和目标属性Y
-# X = df.iloc[:,:-1]
 X = df[names[0:-1]]
 print(X.shape)
 Y = df[names[-1]]
 print(Y.shape)
 print(Y.value_counts())
-# sys.exit()
 
 # 4. 数据分割
 x_train, x_test, y_train, y_test = train_test_split(X, Y, train_size=0.8, random_state=1)
@@ -54,10 +51,7 @@ print("训练数据X的格式:{}, 以及类型:{}".format(x_train.shape, type(x_
 print("测试数据X的格式:{}".format(x_test.shape))
 print("训练数据Y的类型:{}".format(type(y_train)))
 
-# 5. 特征工程的操作
-# NOTE: 不做特征工程
-
-# 6. 模型对象的构建
+# 5. 模型对象的构建
 """
 KNN:
     n_neighbors=5,
