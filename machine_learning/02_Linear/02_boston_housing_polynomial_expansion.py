@@ -129,3 +129,107 @@ test_poly_inter_r2 = r2_score(y_test, y_test_poly_inter_pred)
 print(f"只保留交互项：")
 print(f"训练集R²: {train_poly_inter_r2:.2f}")
 print(f"测试集R²: {test_poly_inter_r2:.2f}")
+
+# 1. 线性模型
+plt.figure(figsize=(12, 5))
+
+# 训练集
+plt.subplot(1, 2, 1)
+plt.plot(range(len(y_train)), y_train, 'b-', linewidth=1.5, label='真实值')
+plt.plot(range(len(y_train)), y_train_pred, 'r-', linewidth=1.5, label='预测值')
+plt.title('线性模型 - 训练集')
+plt.xlabel('样本索引')
+plt.ylabel('房价')
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+# 测试集
+plt.subplot(1, 2, 2)
+plt.plot(range(len(y_test)), y_test, 'b-', linewidth=1.5, label='真实值')
+plt.plot(range(len(y_test)), y_test_pred, 'r-', linewidth=1.5, label='预测值')
+plt.title('线性模型 - 测试集')
+plt.xlabel('样本索引')
+plt.ylabel('房价')
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+# 2. 二阶多项式
+plt.figure(figsize=(12, 5))
+
+# 训练集
+plt.subplot(1, 2, 1)
+plt.plot(range(len(y_train)), y_train, 'b-', linewidth=1.5, label='真实值')
+plt.plot(range(len(y_train)), y_train_poly_pred, 'r-', linewidth=1.5, label='预测值')
+plt.title('二阶多项式 - 训练集')
+plt.xlabel('样本索引')
+plt.ylabel('房价')
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+# 测试集
+plt.subplot(1, 2, 2)
+plt.plot(range(len(y_test)), y_test, 'b-', linewidth=1.5, label='真实值')
+plt.plot(range(len(y_test)), y_test_poly_pred, 'r-', linewidth=1.5, label='预测值')
+plt.title('二阶多项式 - 测试集')
+plt.xlabel('样本索引')
+plt.ylabel('房价')
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+# 3. 三阶多项式
+plt.figure(figsize=(12, 5))
+
+# 训练集
+plt.subplot(1, 2, 1)
+plt.plot(range(len(y_train)), y_train, 'b-', linewidth=1.5, label='真实值')
+plt.plot(range(len(y_train)), y_train_poly3_pred, 'r-', linewidth=1.5, label='预测值')
+plt.title('三阶多项式 - 训练集')
+plt.xlabel('样本索引')
+plt.ylabel('房价')
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+# 测试集
+plt.subplot(1, 2, 2)
+plt.plot(range(len(y_test)), y_test, 'b-', linewidth=1.5, label='真实值')
+plt.plot(range(len(y_test)), y_test_poly3_pred, 'r-', linewidth=1.5, label='预测值')
+plt.title('三阶多项式 - 测试集')
+plt.xlabel('样本索引')
+plt.ylabel('房价')
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+# 4. 只保留交互项
+plt.figure(figsize=(12, 5))
+
+# 训练集
+plt.subplot(1, 2, 1)
+plt.plot(range(len(y_train)), y_train, 'b-', linewidth=1.5, label='真实值')
+plt.plot(range(len(y_train)), y_train_poly_inter_pred, 'r-', linewidth=1.5, label='预测值')
+plt.title('只保留交互项 - 训练集')
+plt.xlabel('样本索引')
+plt.ylabel('房价')
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+# 测试集
+plt.subplot(1, 2, 2)
+plt.plot(range(len(y_test)), y_test, 'b-', linewidth=1.5, label='真实值')
+plt.plot(range(len(y_test)), y_test_poly_inter_pred, 'r-', linewidth=1.5, label='预测值')
+plt.title('只保留交互项 - 测试集')
+plt.xlabel('样本索引')
+plt.ylabel('房价')
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
